@@ -1,0 +1,16 @@
+
+PROYECTO MAVEN.
+Dependencias JAXB
+
+		<!-- Dependencia JAXB para Java 11 o superior -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version> <!-- Versión actualizada de JAXB -->
+		</dependency>
+		<!-- Implementación de JAXB -->
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.3</version> <!-- Versión actualizada de JAXB -->
+		</dependency>
