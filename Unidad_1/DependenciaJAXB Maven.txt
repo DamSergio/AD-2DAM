@@ -2,6 +2,7 @@
 PROYECTO MAVEN.
 Dependencias JAXB
 
+<dependencies>
 		<!-- Dependencia JAXB para Java 11 o superior -->
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
@@ -14,3 +15,4 @@ Dependencias JAXB
 			<artifactId>jaxb-runtime</artifactId>
 			<version>2.3.3</version> <!-- Versión actualizada de JAXB -->
 		</dependency>
+	</dependencies>
