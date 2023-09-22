@@ -2,14 +2,48 @@ package variasLibrerias;
 
 import java.util.ArrayList;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 
 public class Main {
 	private static final String XML_FILE = "./librerias.xml";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws JAXBException {
+		crearXML();
+		leerXML();
+	}
+
+	private static void leerXML() throws JAXBException {
+		JAXBContext context = JAXBContext.newInstance(ListaLibrerias.class);
+		Unmarshaller unmars = context.createUnmarshaller();
+		try {
+			ListaLibrerias listaLibrerias =(ListaLibrerias) unmars.unmarshal(new FileReader(XML_FILE));
+			ArrayList<Libreria> librerias = listaLibrerias.getLibrerias();
+			
+			for (Libreria lib:librerias) {
+				System.out.println(lib.getNombre());
+				System.out.println(lib.getLugar());
+				ArrayList<Libro> libros = lib.getListaLibro();
+				
+				for (Libro libro:libros) {
+					System.out.println("\n"+libro.getNombre());
+					System.out.println("\t"+libro.getAutor());
+					System.out.println("\t"+libro.getEditorial());
+					System.out.println("\t"+libro.getIsbn());
+				}
+			}
+		} catch (FileNotFoundException | JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private static void crearXML() {
 		ArrayList<Libro> libroLista = new ArrayList<Libro>();
 		ArrayList<Libreria> libreriaLista = new ArrayList<>();
 		
@@ -33,23 +67,19 @@ public class Main {
         ListaLibrerias librerias = new ListaLibrerias();
         librerias.setLibrerias(libreriaLista);
         
-        
-        //Creamos el Marshaller, convierte el java bean en una cadena XML
-        
-         // Escribimos en el archivo
-        try {
-        	JAXBContext context = JAXBContext.newInstance(ListaLibrerias.class);
-        	Marshaller m = context.createMarshaller();
-            //Formateamos el xml para que quede bien
-             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-             // Lo visualizamos con system out
-             m.marshal(librerias, System.out);
+    	JAXBContext context;
+		try {
+			context = JAXBContext.newInstance(ListaLibrerias.class);
+			Marshaller m = context.createMarshaller();
+	    	//Formateamos el xml para que quede bien
+	    	m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+	    	// Lo visualizamos con system out
+			m.marshal(librerias, System.out);
 			m.marshal(librerias, new File(XML_FILE));
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 }

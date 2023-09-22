@@ -2,7 +2,7 @@ package unalibreria;
 
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(propOrder = {"nombre", "nombre", "editorial", "isbn"})
+@XmlType(propOrder = {"nombre", "autor", "editorial", "isbn"})
 public class Libro {
 	private String nombre;
 	private String autor;

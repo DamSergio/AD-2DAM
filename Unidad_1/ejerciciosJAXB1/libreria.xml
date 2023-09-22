@@ -2,16 +2,16 @@
 <libreria>
     <ListaLibro>
         <Libro>
+            <nombre>Entornos de Desarrollo</nombre>
             <autor>Alicia Ramos</autor>
             <editorial>Garceta</editorial>
             <isbn>978-84-1545-297-3</isbn>
-            <nombre>Entornos de Desarrollo</nombre>
         </Libro>
         <Libro>
+            <nombre>Acceso a Datos</nombre>
             <autor>Maria Jesús Ramos</autor>
             <editorial>Garceta</editorial>
             <isbn>978-84-1545-228-7</isbn>
-            <nombre>Acceso a Datos</nombre>
         </Libro>
     </ListaLibro>
     <lugar>Talavera, como no</lugar>

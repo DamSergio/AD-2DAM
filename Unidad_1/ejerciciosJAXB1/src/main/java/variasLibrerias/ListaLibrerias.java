@@ -19,7 +19,6 @@ public class ListaLibrerias {
 		
 	}
 	
-	@XmlElementWrapper(name="Librerias")
 	@XmlElement(name="Libreria")
 	public ArrayList<Libreria> getLibrerias() {
 		return librerias;

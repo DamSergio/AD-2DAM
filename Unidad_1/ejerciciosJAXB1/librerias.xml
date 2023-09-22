@@ -1,41 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <listaLibrerias>
-    <Librerias>
-        <Libreria>
-            <ListaLibro>
-                <Libro>
-                    <autor>Alicia Ramos</autor>
-                    <editorial>Garceta</editorial>
-                    <isbn>978-84-1545-297-3</isbn>
-                    <nombre>Entornos de Desarrollo</nombre>
-                </Libro>
-                <Libro>
-                    <autor>Maria Jesús Ramos</autor>
-                    <editorial>Garceta</editorial>
-                    <isbn>978-84-1545-228-7</isbn>
-                    <nombre>Acceso a Datos</nombre>
-                </Libro>
-            </ListaLibro>
-            <lugar>Talavera, como no</lugar>
-            <nombre>Prueba de libreria JAXB</nombre>
-        </Libreria>
-        <Libreria>
-            <ListaLibro>
-                <Libro>
-                    <autor>Alicia Ramos</autor>
-                    <editorial>Garceta</editorial>
-                    <isbn>978-84-1545-297-3</isbn>
-                    <nombre>Entornos de Desarrollo</nombre>
-                </Libro>
-                <Libro>
-                    <autor>Maria Jesús Ramos</autor>
-                    <editorial>Garceta</editorial>
-                    <isbn>978-84-1545-228-7</isbn>
-                    <nombre>Acceso a Datos</nombre>
-                </Libro>
-            </ListaLibro>
-            <lugar>Talavera 2, como no</lugar>
-            <nombre>Prueba 2 de libreria JAXB</nombre>
-        </Libreria>
-    </Librerias>
+    <Libreria>
+        <ListaLibro>
+            <Libro>
+                <autor>Alicia Ramos</autor>
+                <editorial>Garceta</editorial>
+                <isbn>978-84-1545-297-3</isbn>
+                <nombre>Entornos de Desarrollo</nombre>
+            </Libro>
+            <Libro>
+                <autor>Maria Jesús Ramos</autor>
+                <editorial>Garceta</editorial>
+                <isbn>978-84-1545-228-7</isbn>
+                <nombre>Acceso a Datos</nombre>
+            </Libro>
+        </ListaLibro>
+        <lugar>Talavera, como no</lugar>
+        <nombre>Prueba de libreria JAXB</nombre>
+    </Libreria>
+    <Libreria>
+        <ListaLibro>
+            <Libro>
+                <autor>Alicia Ramos</autor>
+                <editorial>Garceta</editorial>
+                <isbn>978-84-1545-297-3</isbn>
+                <nombre>Entornos de Desarrollo</nombre>
+            </Libro>
+            <Libro>
+                <autor>Maria Jesús Ramos</autor>
+                <editorial>Garceta</editorial>
+                <isbn>978-84-1545-228-7</isbn>
+                <nombre>Acceso a Datos</nombre>
+            </Libro>
+        </ListaLibro>
+        <lugar>Talavera 2, como no</lugar>
+        <nombre>Prueba 2 de libreria JAXB</nombre>
+    </Libreria>
 </listaLibrerias>
