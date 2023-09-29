@@ -8,9 +8,6 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
-import nuevosDep.Departamento;
-import nuevosDep.NuevosDepartamentos;
-
 public class Main {
 	private final static String XML_FILE = "./ventasarticulos.xml";
 

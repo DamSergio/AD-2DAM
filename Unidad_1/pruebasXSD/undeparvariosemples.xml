@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<departamentoemples>
+  <departamento>
+    <codigodep>1234</codigodep>
+    <nombredep>Ventas</nombredep>
+    <localidad>Toledo</localidad>
+    <presupuesto>123.45</presupuesto>
+  </departamento>
+  <empleados>
+    <emple>
+      <empno>12345678</empno>
+      <apellido>Rajoy</apellido>
+      <oficio>Comercial</oficio>
+      <salario>3.14159</salario>
+    </emple>
+    <emple>
+      <empno>23456789</empno>
+      <apellido>Iglesias</apellido>
+      <oficio>Secretario</oficio>
+      <salario>10</salario>
+    </emple>
+    <emple>
+      <empno>01234567</empno>
+      <apellido>Rivera</apellido>
+      <oficio>Administrativo</oficio>
+      <salario>20</salario>
+    </emple>
+  </empleados>
+</departamentoemples>
