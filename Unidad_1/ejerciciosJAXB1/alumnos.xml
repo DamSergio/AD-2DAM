@@ -7,27 +7,23 @@
         <notas>
             <nota>
                 <asignatura>Matemáticas</asignatura>
-                <codAlum>1</codAlum>
                 <nota>7.5</nota>
             </nota>
             <nota>
                 <asignatura>Lengua</asignatura>
-                <codAlum>1</codAlum>
                 <nota>8.5</nota>
             </nota>
             <nota>
                 <asignatura>Educación Física</asignatura>
-                <codAlum>1</codAlum>
                 <nota>9.5</nota>
             </nota>
             <nota>
                 <asignatura>Música</asignatura>
-                <codAlum>1</codAlum>
                 <nota>9.5</nota>
             </nota>
         </notas>
         <numAlum>1</numAlum>
-        <numAsig>4</numAsig>
+        <numAsig>16</numAsig>
     </alumno>
     <alumno>
         <localidad>Toledo</localidad>
@@ -36,32 +32,27 @@
         <notas>
             <nota>
                 <asignatura>Lengua</asignatura>
-                <codAlum>3</codAlum>
                 <nota>3.5</nota>
             </nota>
             <nota>
                 <asignatura>Matemáticas</asignatura>
-                <codAlum>3</codAlum>
                 <nota>5.5</nota>
             </nota>
             <nota>
                 <asignatura>Educación Física</asignatura>
-                <codAlum>3</codAlum>
                 <nota>4.5</nota>
             </nota>
             <nota>
                 <asignatura>Música</asignatura>
-                <codAlum>3</codAlum>
                 <nota>7.5</nota>
             </nota>
             <nota>
                 <asignatura>Química</asignatura>
-                <codAlum>3</codAlum>
                 <nota>7.5</nota>
             </nota>
         </notas>
         <numAlum>3</numAlum>
-        <numAsig>5</numAsig>
+        <numAsig>20</numAsig>
     </alumno>
     <alumno>
         <localidad>Talavera de la Reina</localidad>
@@ -70,32 +61,27 @@
         <notas>
             <nota>
                 <asignatura>Lengua</asignatura>
-                <codAlum>5</codAlum>
                 <nota>6.5</nota>
             </nota>
             <nota>
                 <asignatura>Ciencias</asignatura>
-                <codAlum>5</codAlum>
                 <nota>4.5</nota>
             </nota>
             <nota>
                 <asignatura>Educación Física</asignatura>
-                <codAlum>5</codAlum>
                 <nota>3.5</nota>
             </nota>
             <nota>
                 <asignatura>Química</asignatura>
-                <codAlum>5</codAlum>
                 <nota>8.5</nota>
             </nota>
             <nota>
                 <asignatura>Música</asignatura>
-                <codAlum>5</codAlum>
                 <nota>8.5</nota>
             </nota>
         </notas>
         <numAlum>5</numAlum>
-        <numAsig>5</numAsig>
+        <numAsig>20</numAsig>
     </alumno>
     <alumno>
         <localidad>Oropesa</localidad>
@@ -104,22 +90,19 @@
         <notas>
             <nota>
                 <asignatura>Ciencias</asignatura>
-                <codAlum>6</codAlum>
                 <nota>3.5</nota>
             </nota>
             <nota>
                 <asignatura>Educación Física</asignatura>
-                <codAlum>6</codAlum>
                 <nota>7.5</nota>
             </nota>
             <nota>
                 <asignatura>Música</asignatura>
-                <codAlum>6</codAlum>
                 <nota>7.5</nota>
             </nota>
         </notas>
         <numAlum>6</numAlum>
-        <numAsig>3</numAsig>
+        <numAsig>12</numAsig>
     </alumno>
     <alumno>
         <localidad>Oropesa</localidad>
@@ -128,32 +111,27 @@
         <notas>
             <nota>
                 <asignatura>Matemáticas</asignatura>
-                <codAlum>8</codAlum>
                 <nota>4.5</nota>
             </nota>
             <nota>
                 <asignatura>Lengua</asignatura>
-                <codAlum>8</codAlum>
                 <nota>2.5</nota>
             </nota>
             <nota>
                 <asignatura>Educación Física</asignatura>
-                <codAlum>8</codAlum>
                 <nota>8.5</nota>
             </nota>
             <nota>
                 <asignatura>Música</asignatura>
-                <codAlum>8</codAlum>
                 <nota>6.5</nota>
             </nota>
             <nota>
                 <asignatura>Química</asignatura>
-                <codAlum>8</codAlum>
                 <nota>6.5</nota>
             </nota>
         </notas>
         <numAlum>8</numAlum>
-        <numAsig>5</numAsig>
+        <numAsig>20</numAsig>
     </alumno>
     <alumno>
         <localidad>Los Navalmorales</localidad>
@@ -162,22 +140,19 @@
         <notas>
             <nota>
                 <asignatura>Lengua</asignatura>
-                <codAlum>9</codAlum>
                 <nota>5.6</nota>
             </nota>
             <nota>
                 <asignatura>Música</asignatura>
-                <codAlum>9</codAlum>
                 <nota>8.5</nota>
             </nota>
             <nota>
                 <asignatura>Ciencias</asignatura>
-                <codAlum>9</codAlum>
                 <nota>7.5</nota>
             </nota>
         </notas>
         <numAlum>9</numAlum>
-        <numAsig>3</numAsig>
+        <numAsig>12</numAsig>
     </alumno>
     <alumno>
         <localidad>Toledo</localidad>
@@ -186,27 +161,23 @@
         <notas>
             <nota>
                 <asignatura>Matemáticas</asignatura>
-                <codAlum>10</codAlum>
                 <nota>8.5</nota>
             </nota>
             <nota>
                 <asignatura>Ciencias</asignatura>
-                <codAlum>10</codAlum>
                 <nota>8.5</nota>
             </nota>
             <nota>
                 <asignatura>Química</asignatura>
-                <codAlum>10</codAlum>
                 <nota>9.5</nota>
             </nota>
             <nota>
                 <asignatura>Música</asignatura>
-                <codAlum>10</codAlum>
                 <nota>9.5</nota>
             </nota>
         </notas>
         <numAlum>10</numAlum>
-        <numAsig>4</numAsig>
+        <numAsig>16</numAsig>
     </alumno>
     <alumno>
         <localidad>Talavera de la Reina</localidad>
@@ -215,36 +186,30 @@
         <notas>
             <nota>
                 <asignatura>Música</asignatura>
-                <codAlum>12</codAlum>
                 <nota>5.5</nota>
             </nota>
             <nota>
                 <asignatura>Química</asignatura>
-                <codAlum>12</codAlum>
                 <nota>7.5</nota>
             </nota>
             <nota>
                 <asignatura>Lengua</asignatura>
-                <codAlum>12</codAlum>
                 <nota>9.0</nota>
             </nota>
             <nota>
                 <asignatura>Ciencias</asignatura>
-                <codAlum>12</codAlum>
                 <nota>9.5</nota>
             </nota>
             <nota>
                 <asignatura>Matemáticas</asignatura>
-                <codAlum>12</codAlum>
                 <nota>7.5</nota>
             </nota>
             <nota>
                 <asignatura>Educación Física</asignatura>
-                <codAlum>12</codAlum>
                 <nota>9.5</nota>
             </nota>
         </notas>
         <numAlum>12</numAlum>
-        <numAsig>6</numAsig>
+        <numAsig>24</numAsig>
     </alumno>
 </alumnos>

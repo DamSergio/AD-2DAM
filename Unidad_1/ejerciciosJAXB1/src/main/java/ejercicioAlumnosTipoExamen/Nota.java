@@ -1,14 +1,15 @@
 package ejercicioAlumnosTipoExamen;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType()
 public class Nota {
-	private int codAlum;
+	private Integer codAlum;
 	private String asignatura;
 	private float nota;
 	
-	public Nota(int codAlum, String asignatura, float nota) {
+	public Nota(Integer codAlum, String asignatura, float nota) {
 		super();
 		this.codAlum = codAlum;
 		this.asignatura = asignatura;
@@ -22,11 +23,12 @@ public class Nota {
 		this.nota = 0;
 	}
 
-	public int getCodAlum() {
+	@XmlElement(name = "cod", required = false)
+	public Integer getCodAlum() {
 		return codAlum;
 	}
 
-	public void setCodAlum(int codAlum) {
+	public void setCodAlum(Integer codAlum) {
 		this.codAlum = codAlum;
 	}
 

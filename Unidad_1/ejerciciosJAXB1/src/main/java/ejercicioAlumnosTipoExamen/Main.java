@@ -72,11 +72,12 @@ public class Main {
 					continue;
 				}
 				
-				alumno.getNotas().add(nota);
-				alumno.setNumAsig(alumno.getNumAsig() + 1);
+				Nota n = new Nota();
+				n.setNota(nota.getNota());
+				n.setAsignatura(nota.getAsignatura());
+				n.setCodAlum(null);
+				alumno.getNotas().add(n);
 			}
-			
-			alumno.actualizarNotaMedia();
 		}
 		
 		ListaAlumnos lista = new ListaAlumnos(alumnos);
@@ -91,6 +92,14 @@ public class Main {
 		ArrayList<Alumno> alumnos = listarAlumnos(alumnosRandom, false);
 		ArrayList<Nota> notas = listarNotas(notasRandom, false);
 		
+		System.out.printf("%7s %-20s %-20s %7s %10s%n", "NUMALUM", "NOMBRE", "LOCALIDAD", "NUMASIG", "NOTA MEDIA");
+		System.out.printf("%7s %-20s %-20s %7s %10s%n", "-------", "--------------------", "--------------------", "-------", "----------");
+		
+		String alumnoMayorNota = "";
+		float mayorNota = 0;
+		float mediaTotal = 0;
+		int pos = 0;
+		
 		for (Alumno alumno : alumnos) {
 			for (Nota nota : notas) {
 				if (nota.getCodAlum() != alumno.getNumAlum()) {
@@ -102,16 +111,7 @@ public class Main {
 			}
 			
 			alumno.actualizarNotaMedia();
-		}
-		
-		System.out.printf("%7s %-20s %-20s %7s %10s%n", "NUMALUM", "NOMBRE", "LOCALIDAD", "NUMASIG", "NOTA MEDIA");
-		System.out.printf("%7s %-20s %-20s %7s %10s%n", "-------", "--------------------", "--------------------", "-------", "----------");
-		
-		String alumnoMayorNota = "";
-		float mayorNota = 0;
-		float mediaTotal = 0;
-		int pos = 0;
-		for (Alumno alumno:alumnos) {
+			
 			pos = (alumno.getNumAlum() - 1) * ALUM_DAT_LON;
 			alumnosRandom.seek(pos + COD_ALUM_LON + NOM_LON + LOC_LON);
 			alumnosRandom.writeInt(alumno.getNumAsig());
@@ -128,6 +128,7 @@ public class Main {
 		}
 		
 		mediaTotal /= alumnos.size();
+		System.out.printf("%7s %-20s %-20s %7s %10s%n", "-------", "--------------------", "--------------------", "-------", "----------");
 		System.out.println("Alumno con nota media maxima: " + alumnoMayorNota);
 		System.out.println("Media de nota total: " + mediaTotal);
 		
