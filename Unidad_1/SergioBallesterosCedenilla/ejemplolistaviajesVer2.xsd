@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<xsd:element name="ListaViajes" type="ListaViajesType" />
+
+
+	<xsd:complexType name="ListaViajesType">
+		<xsd:sequence>
+			<xsd:element name="viaje"
+				type="Viaje" minOccurs="1" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="Viaje">
+		<xsd:sequence>
+			 <xsd:element name="codviaje" type="xsd:integer" />
+              <xsd:element name="nombre" type="xsd:string" />
+              <xsd:element name="pvp" type="xsd:float" />
+              <xsd:element name="numplazas" type="xsd:integer" />
+              <xsd:element name="numreservas" type="xsd:integer" />
+              <xsd:element name="totalimporte" type="xsd:float" />
+			  <xsd:element name="ListaReservas" type="ListaReservasType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ListaReservasType">
+		<xsd:sequence>
+			<xsd:element name="reserva" type="Reserva" minOccurs="1"
+				maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Reserva">
+		<xsd:sequence>
+			<xsd:element name="nombrecliente" type="xsd:string" />
+			<xsd:element name="plazasreservadas" type="xsd:integer" />
+
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+</xsd:schema>

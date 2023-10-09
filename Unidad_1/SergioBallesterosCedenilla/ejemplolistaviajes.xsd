@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ListaViajes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="viaje">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codviaje" type="xs:unsignedByte" />
+              <xs:element name="nombre" type="xs:unsignedByte" />
+              <xs:element name="pvp" type="xs:unsignedByte" />
+              <xs:element name="numplazas" type="xs:unsignedByte" />
+              <xs:element name="numreservas" type="xs:unsignedByte" />
+              <xs:element name="totalimporte" type="xs:unsignedByte" />
+              <xs:element name="ListaReservas">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="reserva">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="nombrecliente" type="xs:string" />
+                          <xs:element name="plazasreservadas" type="xs:unsignedByte" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
