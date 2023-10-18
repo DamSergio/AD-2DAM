@@ -1,0 +1,96 @@
+2020-10-23 19:33:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La columna "D.DEPT_NO" debe estar incluida en la lista de GROUP BY
+Column "D.DEPT_NO" must be in the GROUP BY list; SQL statement:
+select d.dept_no, d.dnombre, count(e.emp_no), sum(e.salario)   from empleados e join departamentos d on e.dept_no=d.dept_no [90016-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:182)
+	at org.h2.command.dml.Select.updateAgg(Select.java:545)
+	at org.h2.command.dml.Select.gatherGroup(Select.java:525)
+	at org.h2.command.dml.Select.queryGroup(Select.java:487)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:839)
+	at org.h2.command.dml.Query.queryWithoutCacheLazyCheck(Query.java:201)
+	at org.h2.command.dml.Query.query(Query.java:489)
+	at org.h2.command.dml.Query.query(Query.java:451)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:285)
+	at org.h2.command.Command.executeQuery(Command.java:195)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:85)
+	at informaciondatabases.resulsetmetadata(informaciondatabases.java:178)
+	at informaciondatabases.main(informaciondatabases.java:71)
+2022-10-11 20:53:24 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at ejercicio1.pruebas.h2(pruebas.java:89)
+	at ejercicio1.pruebas.main(pruebas.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:886)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
+	... 13 more
+2022-10-11 20:53:24 database: opening D:/_Curso22-23/_ADAT2223/Tema2_JDBC/pruebas2223/ejercicio1/Basesdatos/h2/ejemplo
+org.h2.message.DbException: Versión del archivo de base de datos no soportada ó encabezado de archivo invalido en archivo "D:/_Curso22-23/_ADAT2223/Tema2_JDBC/pruebas2223/ejercicio1/Basesdatos/h2/ejemplo.mv.db"
+Unsupported database file version or invalid file header in file "D:/_Curso22-23/_ADAT2223/Tema2_JDBC/pruebas2223/ejercicio1/Basesdatos/h2/ejemplo.mv.db" [90048-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:161)
+	at org.h2.mvstore.db.Store.<init>(Store.java:145)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at ejercicio1.pruebas.h2(pruebas.java:89)
+	at ejercicio1.pruebas.main(pruebas.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Versión del archivo de base de datos no soportada ó encabezado de archivo invalido en archivo "D:/_Curso22-23/_ADAT2223/Tema2_JDBC/pruebas2223/ejercicio1/Basesdatos/h2/ejemplo.mv.db"
+Unsupported database file version or invalid file header in file "D:/_Curso22-23/_ADAT2223/Tema2_JDBC/pruebas2223/ejercicio1/Basesdatos/h2/ejemplo.mv.db" [90048-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 14 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:886)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	... 11 more
+10-11 20:54:43 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "DEPARTAMENTOS" no encontrada
+Table "DEPARTAMENTOS" not found; SQL statement:
+SELECT * FROM departamentos [42102-161]
+10-11 20:59:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "DEPARTAMENTOS" no encontrada
+Table "DEPARTAMENTOS" not found; SQL statement:
+SELECT * FROM departamentos [42102-176]
+10-11 21:01:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabla "DEPARTAMENTOS" no encontrada
+Table "DEPARTAMENTOS" not found; SQL statement:
+SELECT * FROM departamentos [42102-176]

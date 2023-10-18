@@ -1,0 +1,18 @@
+
+Las bases de datos se encuentran dentro de la raiz del proyecto, en la carpeta Basesdatos/
+
+	Connection conexion1 = DriverManager.getConnection  
+		        ("jdbc:oracle:thin:@cloud.riberadeltajo.es:8011:XE ", "DAM", "DAM");  
+	
+	Connection conexion1 = DriverManager.getConnection("jdbc:ucanaccess://./Basesdatos/ejemplo.accdb");
+	// si no se ponen los campos en la select salen ordenados alfabéticamente (dnombre, dept_no, loc)
+	
+	Connection conexion1 = DriverManager.getConnection("jdbc:hsqldb:file:./Basesdatos/hsqldb/ejemplo/ejemplo");
+			
+	Connection conexion1 = DriverManager.getConnection("jdbc:derby:./Basesdatos/derby/ejemplo");	
+	
+	Connection conexion1 = DriverManager.getConnection("jdbc:h2:./Basesdatos/h2/ejemplo", "sa", "");
+
+	Connection conexion1 = DriverManager.getConnection("jdbc:mysql://localhost:3307/ejemplo", "root", "");
+	
+	Connection conexion1 = DriverManager.getConnection("jdbc:sqlite:./Basesdatos/sqlite/ejemplo.db");

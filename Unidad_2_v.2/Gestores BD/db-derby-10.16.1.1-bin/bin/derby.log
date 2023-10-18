@@ -1,0 +1,19 @@
+----------------------------------------------------------------
+Tue Oct 10 19:58:10 CEST 2023:
+ Iniciando instancia a816c00e-018b-1abd-39a2-000000bf33a0 de Derby, versión The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): 
+en el directorio de base de datos C:\Alicia\Compartida_ALICIA_2324\Unidad 2\Gestores BD\db-derby-10.16.1.1-bin\bin\ejemplo con el cargador de clases sun.misc.Launcher$AppClassLoader@d3c617
+Cargado desde file:/C:/Alicia/Tema2/basesembebidas/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_331-b09
+user.dir=C:\Alicia\Compartida_ALICIA_2324\Unidad 2\Gestores BD\db-derby-10.16.1.1-bin\bin
+os.name=Windows 11
+os.arch=x86
+os.version=10.0
+derby.system.home=null
+Cargador de clases de base de datos iniciado - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Oct 10 20:08:31 CEST 2023: cerrando motor de Derby
+----------------------------------------------------------------
+Tue Oct 10 20:08:31 CEST 2023:
+Cerrando la instancia a816c00e-018b-1abd-39a2-000000bf33a0 en el directorio de base de datos C:\Alicia\Compartida_ALICIA_2324\Unidad 2\Gestores BD\db-derby-10.16.1.1-bin\bin\ejemplo con cargador de clases sun.misc.Launcher$AppClassLoader@d3c617
+----------------------------------------------------------------
