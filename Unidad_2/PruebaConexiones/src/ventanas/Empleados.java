@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import operaciones.OperacionesDepartamentos;
+import operaciones.OpercionesEmpleados;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -14,13 +14,16 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 public class Empleados extends JFrame {
 	
-	private OperacionesDepartamentos ope = new OperacionesDepartamentos();
+	private OpercionesEmpleados ope = new OpercionesEmpleados();
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -32,6 +35,7 @@ public class Empleados extends JFrame {
 	private JTextField txtCodDep;
 	private JTextField txtCom;
 	private JTextField txtFech;
+	private JTextArea txtOutput;
 
 	/**
 	 * Launch the application.
@@ -146,13 +150,18 @@ public class Empleados extends JFrame {
 		txtFech.setEditable(false);
 		txtFech.setColumns(10);
 		txtFech.setBounds(266, 304, 208, 23);
+		
+		Date fechaHoy = new Date();
+		txtFech.setText(new SimpleDateFormat("dd/MM/yyyy").format(fechaHoy));
+		
 		contentPane.add(txtFech);
 		
 		JButton btnNewButton = new JButton("Insertar");
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				txtOutput.setText("");
+				comprobarInsertar();			
 			}
 		});
 		btnNewButton.setBounds(86, 357, 121, 37);
@@ -162,7 +171,155 @@ public class Empleados extends JFrame {
 		scrollPane.setBounds(501, 10, 315, 384);
 		contentPane.add(scrollPane);
 		
-		JTextArea txtOutput = new JTextArea();
+		txtOutput = new JTextArea();
 		scrollPane.setViewportView(txtOutput);
+		
+		JButton btnActualizar = new JButton("Actualizar");
+		btnActualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String msg = "";
+				boolean insertar = true;
+				
+				int cod = 0;
+				try {
+					cod = Integer.parseInt(txtCod.getText());
+				} catch (NumberFormatException ex) {
+					msg += "Cod emple debe ser un numero\n";
+					insertar = false;
+				}
+				
+				String ape = txtApe.getText();
+				if (ape.trim().length() <= 0) {
+					msg += "Apellido no puede estar vacio\n";
+					insertar = false;
+				}
+				
+				String ofi = txtOfi.getText();
+				if (ofi.trim().length() <= 0) {
+					msg += "Oficio no puede estar vacio\n";
+					insertar = false;
+				}
+				
+				float sal = 0;
+				try {
+					sal = Float.parseFloat(txtSal.getText());
+				} catch (NumberFormatException ex) {
+					msg += "Salario debe ser un numero\n";
+					insertar = false;
+				}
+				
+				int dir = 0;
+				try {
+					dir = Integer.parseInt(txtDir.getText());
+				} catch (NumberFormatException ex) {
+					msg += "Director debe ser un numero\n";
+					insertar = false;
+				}
+				
+				int codDep = 0;
+				try {
+					codDep = Integer.parseInt(txtCodDep.getText());
+				} catch (NumberFormatException ex) {
+					msg += "Cod dep debe ser un numero\n";
+					insertar = false;
+				}
+				
+				float comision = 0;
+				try {
+					comision = Float.parseFloat(txtCom.getText());
+				} catch (NumberFormatException ex) {
+					//msg += "Comision debe ser un numero\n";
+					comision = 0;
+					txtCom.setText("0");
+					insertar = false;
+				}
+				
+				if (insertar) {
+					msg = ope.actualizarEmple(cod, ape, ofi, sal, dir, codDep, comision, txtFech.getText());
+					txtOutput.append("\n------------------------");
+					txtOutput.append("\n" + msg);
+					txtOutput.append("------------------------");
+				} else {
+					txtOutput.append("\n------------------------");
+					txtOutput.append("\n" + msg);
+					txtOutput.append("------------------------");
+				}
+			}
+		});
+		btnActualizar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnActualizar.setBounds(233, 357, 121, 37);
+		contentPane.add(btnActualizar);
+	}
+	
+	public String comprobarInsertar() {
+		String msg = "";
+		boolean insertar = true;
+		
+		int cod = 0;
+		try {
+			cod = Integer.parseInt(txtCod.getText());
+		} catch (NumberFormatException ex) {
+			msg += "Cod emple debe ser un numero\n";
+			insertar = false;
+		}
+		
+		String ape = txtApe.getText();
+		if (ape.trim().length() <= 0) {
+			msg += "Apellido no puede estar vacio\n";
+			insertar = false;
+		}
+		
+		String ofi = txtOfi.getText();
+		if (ofi.trim().length() <= 0) {
+			msg += "Oficio no puede estar vacio\n";
+			insertar = false;
+		}
+		
+		float sal = 0;
+		try {
+			sal = Float.parseFloat(txtSal.getText());
+		} catch (NumberFormatException ex) {
+			msg += "Salario debe ser un numero\n";
+			insertar = false;
+		}
+		
+		int dir = 0;
+		try {
+			dir = Integer.parseInt(txtDir.getText());
+		} catch (NumberFormatException ex) {
+			msg += "Director debe ser un numero\n";
+			insertar = false;
+		}
+		
+		int codDep = 0;
+		try {
+			codDep = Integer.parseInt(txtCodDep.getText());
+		} catch (NumberFormatException ex) {
+			msg += "Cod dep debe ser un numero\n";
+			insertar = false;
+		}
+		
+		float comision = 0;
+		try {
+			comision = Float.parseFloat(txtCom.getText());
+		} catch (NumberFormatException ex) {
+			//msg += "Comision debe ser un numero\n";
+			comision = 0;
+			txtCom.setText("0");
+			insertar = false;
+		}
+		
+		if (insertar) {
+			msg = ope.insertarEmple(cod, ape, ofi, sal, dir, codDep, comision, txtFech.getText());
+			txtOutput.append("\n------------------------");
+			txtOutput.append("\n" + msg);
+			txtOutput.append("------------------------");
+		} else {
+			txtOutput.append("\n------------------------");
+			txtOutput.append("\n" + msg);
+			txtOutput.append("------------------------");
+		}
+
+		return msg;
 	}
 }
