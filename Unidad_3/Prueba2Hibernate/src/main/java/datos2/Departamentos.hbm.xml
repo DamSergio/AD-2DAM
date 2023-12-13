@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 20 nov 2023 20:02:25 by Hibernate Tools 6.1.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 nov 2023 19:56:51 by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="datos.Departamentos" optimistic-lock="none" table="DEPARTAMENTOS">
+    <class name="datos2.Departamentos" optimistic-lock="none" table="DEPARTAMENTOS">
         <id name="deptNo" type="big_integer">
             <column name="DEPT_NO" precision="22" scale="0"/>
             <generator class="assigned"/>
@@ -22,7 +22,7 @@
             <key>
                 <column name="DEPT_NO" not-null="true" precision="22" scale="0"/>
             </key>
-            <one-to-many class="datos.Empleados"/>
+            <one-to-many class="datos2.Empleados"/>
         </set>
     </class>
 </hibernate-mapping>

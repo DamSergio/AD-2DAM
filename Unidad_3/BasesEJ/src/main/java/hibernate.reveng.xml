@@ -2,16 +2,16 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-	<table-filter match-schema="EJ" match-name="DEPARTAMENTOS" />
-	<table-filter match-schema="EJ" match-name="EMPLEADOS" />
-	<table-filter match-name="C1_ASIGNATURAS" match-schema="EJ"></table-filter>
+<table-filter match-name="C1_ASIGNATURAS" match-schema="EJ"></table-filter>
 	<table-filter match-name="C1_ASIGPROF" match-schema="EJ"></table-filter>
 	<table-filter match-name="C1_CENTROS" match-schema="EJ"></table-filter>
 	<table-filter match-name="C1_ESPECIALIDAD" match-schema="EJ"></table-filter>
 	<table-filter match-name="C1_PROFESORES" match-schema="EJ"></table-filter>
 	<table-filter match-name="CLIENTES" match-schema="EJ"></table-filter>
 	<table-filter match-name="COMPRAS" match-schema="EJ"></table-filter>
+	<table-filter match-name="DEPARTAMENTOS" match-schema="EJ"></table-filter>
 	<table-filter match-name="DETCOMPRAS" match-schema="EJ"></table-filter>
+	<table-filter match-name="EMPLEADOS" match-schema="EJ"></table-filter>
 	<table-filter match-name="PRODUCTOS" match-schema="EJ"></table-filter>
 	<table-filter match-name="T_ACCESOS" match-schema="EJ"></table-filter>
 	<table-filter match-name="T_COCHERAS" match-schema="EJ"></table-filter>
@@ -19,4 +19,6 @@
 	<table-filter match-name="T_LINEAS" match-schema="EJ"></table-filter>
 	<table-filter match-name="T_LINEA_ESTACION" match-schema="EJ"></table-filter>
 	<table-filter match-name="T_TRENES" match-schema="EJ"></table-filter>
+	<table-filter match-name="NUEVOS" match-schema="EJ"></table-filter>
+	<table-filter match-name="T_NUEVOS_TRENES" match-schema="EJ"></table-filter>
 </hibernate-reverse-engineering>

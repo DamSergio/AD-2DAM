@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 12 dic 2023 20:42:24 by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="datos.Nuevos" optimistic-lock="none" table="NUEVOS">
+        <id name="deptNo" type="big_integer">
+            <column name="DEPT_NO" precision="22" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="dnombre" type="string">
+            <column length="15" name="DNOMBRE"/>
+        </property>
+        <property name="loc" type="string">
+            <column length="15" name="LOC"/>
+        </property>
+    </class>
+</hibernate-mapping>

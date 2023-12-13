@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-schema="EJ" match-name="C1_ASIGNATURAS"/>
+  <table-filter match-schema="EJ" match-name="C1_ASIGPROF"/>
+  <table-filter match-schema="EJ" match-name="C1_CENTROS"/>
+  <table-filter match-schema="EJ" match-name="C1_ESPECIALIDAD"/>
+  <table-filter match-schema="EJ" match-name="C1_PROFESORES"/>
+  <table-filter match-schema="EJ" match-name="CLIENTES"/>
+  <table-filter match-schema="EJ" match-name="COMPRAS"/>
+  <table-filter match-schema="EJ" match-name="DEPARTAMENTOS"/>
+  <table-filter match-schema="EJ" match-name="DETCOMPRAS"/>
+  <table-filter match-schema="EJ" match-name="EMPLEADOS"/>
+  <table-filter match-schema="EJ" match-name="PRODUCTOS"/>
+</hibernate-reverse-engineering>

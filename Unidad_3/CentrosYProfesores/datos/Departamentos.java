@@ -1,5 +1,5 @@
 package datos;
-// Generated 20 nov 2023 20:02:25 by Hibernate Tools 6.1.7.Final
+// Generated 23 nov 2023 16:03:47 by Hibernate Tools 6.1.7.Final
 
 import java.math.BigInteger;
 import java.util.HashSet;

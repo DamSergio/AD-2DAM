@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 12 dic 2023 20:42:24 by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="datos.TNuevosTrenes" optimistic-lock="none" table="T_NUEVOS_TRENES">
+        <id name="codTren" type="int">
+            <column name="COD_TREN" precision="5" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="nombre" type="string">
+            <column length="50" name="NOMBRE" not-null="true"/>
+        </property>
+        <property name="tipo" type="string">
+            <column length="20" name="TIPO" not-null="true"/>
+        </property>
+        <property name="codLinea" type="big_integer">
+            <column name="COD_LINEA" not-null="true" precision="22" scale="0"/>
+        </property>
+        <property name="codCochera" type="big_integer">
+            <column name="COD_COCHERA" not-null="true" precision="22" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>
