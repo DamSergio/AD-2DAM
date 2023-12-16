@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-<table-filter match-name="C1_ASIGNATURAS" match-schema="EJ"></table-filter>
+	<table-filter match-name="C1_ASIGNATURAS" match-schema="EJ"></table-filter>
 	<table-filter match-name="C1_ASIGPROF" match-schema="EJ"></table-filter>
 	<table-filter match-name="C1_CENTROS" match-schema="EJ"></table-filter>
 	<table-filter match-name="C1_ESPECIALIDAD" match-schema="EJ"></table-filter>
@@ -21,4 +21,8 @@
 	<table-filter match-name="T_TRENES" match-schema="EJ"></table-filter>
 	<table-filter match-name="NUEVOS" match-schema="EJ"></table-filter>
 	<table-filter match-name="T_NUEVOS_TRENES" match-schema="EJ"></table-filter>
+	<table-filter match-name="T3CLIENTES" match-schema="EJ"></table-filter>
+	<table-filter match-name="T3HABITACIONES" match-schema="EJ"></table-filter>
+	<table-filter match-name="T3RESERVAS" match-schema="EJ"></table-filter>
+	<table-filter match-name="T3TIPOSHABITACIONES" match-schema="EJ"></table-filter>
 </hibernate-reverse-engineering>

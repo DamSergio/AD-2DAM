@@ -72,21 +72,26 @@ public class PrincipalMetro {
 			
 			TTrenes t = (TTrenes) session.get(TTrenes.class, tren.getCodTren());
 			if (t == null) {
-				session.createMutationQuery("insert into TTrenes(codTren, nombre, TCocheras.codCochera, tipo, TLineas.codLinea) select codTren, nombre, codLinea, tipo, codCochera from TNuevosTrenes where codTren = :cod")
-					.setParameter("cod", tren.getCodTren())
-					.executeUpdate();
+				TTrenes tr = new TTrenes();
+				
+				tr.setCodTren(tren.getCodTren());
+				tr.setNombre(tren.getNombre());
+				tr.setTCocheras(cochera);
+				tr.setTipo(tren.getTipo());
+				tr.setTLineas(linea);
+				
+				session.persist(tr);
 				
 				System.out.println("Se ha insertado el tren: " + tren.getCodTren());
 			} else {
-				session.createMutationQuery("update TTrenes set nombre = :nombre, TCocheras.codCochera = :cochera, tipo = :tipo, TLineas.codLinea = :linea where codTren = :cod")
-					.setParameter("nombre", tren.getNombre())
-					.setParameter("cochera", tren.getCodCochera())
-					.setParameter("tipo", tren.getTipo())
-					.setParameter("linea", tren.getCodLinea())
-					.setParameter("cod", tren.getCodTren())
-					.executeUpdate();
+				t.setNombre(tren.getNombre());
+				t.setTCocheras(cochera);
+				t.setTipo(tren.getTipo());
+				t.setTLineas(linea);
 				
-				System.out.println("Se ha insertado el tren: " + tren.getCodTren());
+				session.merge(t);
+				
+				System.out.println("Se ha modificado el tren: " + tren.getCodTren());
 			}
 		}
 		

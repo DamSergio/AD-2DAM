@@ -1,5 +1,5 @@
 package datos;
-// Generated 12 dic 2023 20:42:23 by Hibernate Tools 5.6.15.Final
+// Generated 14 dic 2023 15:57:23 by Hibernate Tools 5.6.15.Final
 
 import java.math.BigInteger;
 
@@ -11,13 +11,13 @@ public class TNuevosTrenes implements java.io.Serializable {
 	private int codTren;
 	private String nombre;
 	private String tipo;
-	private int codLinea;
-	private int codCochera;
+	private BigInteger codLinea;
+	private BigInteger codCochera;
 
 	public TNuevosTrenes() {
 	}
 
-	public TNuevosTrenes(int codTren, String nombre, String tipo, int codLinea, int codCochera) {
+	public TNuevosTrenes(int codTren, String nombre, String tipo, BigInteger codLinea, BigInteger codCochera) {
 		this.codTren = codTren;
 		this.nombre = nombre;
 		this.tipo = tipo;
@@ -49,19 +49,19 @@ public class TNuevosTrenes implements java.io.Serializable {
 		this.tipo = tipo;
 	}
 
-	public int getCodLinea() {
+	public BigInteger getCodLinea() {
 		return this.codLinea;
 	}
 
-	public void setCodLinea(int codLinea) {
+	public void setCodLinea(BigInteger codLinea) {
 		this.codLinea = codLinea;
 	}
 
-	public int getCodCochera() {
+	public BigInteger getCodCochera() {
 		return this.codCochera;
 	}
 
-	public void setCodCochera(int codCochera) {
+	public void setCodCochera(BigInteger codCochera) {
 		this.codCochera = codCochera;
 	}
 

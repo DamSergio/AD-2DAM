@@ -14,6 +14,7 @@
         <property name="hibernate.validator.apply_to_ddl">false</property>
         <mapping resource="datos/Departamentos.hbm.xml"/>
         <mapping resource="datos/TLineas.hbm.xml"/>
+        <mapping resource="datos/T3reservas.hbm.xml"/>
         <mapping resource="datos/Compras.hbm.xml"/>
         <mapping resource="datos/C1Profesores.hbm.xml"/>
         <mapping resource="datos/TLineaEstacion.hbm.xml"/>
@@ -30,5 +31,8 @@
         <mapping resource="datos/Clientes.hbm.xml"/>
         <mapping resource="datos/TAccesos.hbm.xml"/>
         <mapping resource="datos/C1Centros.hbm.xml"/>
+        <mapping resource="datos/T3clientes.hbm.xml"/>
+        <mapping resource="datos/T3habitaciones.hbm.xml"/>
+        <mapping resource="datos/T3tiposhabitaciones.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

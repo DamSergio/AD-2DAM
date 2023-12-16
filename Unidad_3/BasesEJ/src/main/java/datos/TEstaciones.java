@@ -1,5 +1,5 @@
 package datos;
-// Generated 12 dic 2023 20:42:23 by Hibernate Tools 5.6.15.Final
+// Generated 14 dic 2023 15:57:23 by Hibernate Tools 5.6.15.Final
 
 import java.util.HashSet;
 import java.util.Set;

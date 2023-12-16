@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 14 dic 2023 15:57:23 by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="datos.T3tiposhabitaciones" optimistic-lock="none" table="T3TIPOSHABITACIONES">
+        <id name="tipo" type="string">
+            <column length="30" name="TIPO"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="descripciontexto" type="string">
+            <column length="50" name="DESCRIPCIONTEXTO"/>
+        </property>
+        <property name="precio" type="double">
+            <column name="PRECIO" not-null="true" precision="126" scale="0"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="t3habitacioneses" table="T3HABITACIONES">
+            <key>
+                <column length="30" name="TIPO"/>
+            </key>
+            <one-to-many class="datos.T3habitaciones"/>
+        </set>
+    </class>
+</hibernate-mapping>
