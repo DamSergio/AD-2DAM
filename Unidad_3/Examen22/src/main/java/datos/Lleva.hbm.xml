@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 18 dic 2023 20:06:31 by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="datos.Lleva" optimistic-lock="none" table="LLEVA">
+        <composite-id class="datos.LlevaId" name="id">
+            <key-property name="numetapa" type="big_integer">
+                <column name="NUMETAPA" precision="22" scale="0"/>
+            </key-property>
+            <key-property name="codigocamiseta" type="big_integer">
+                <column name="CODIGOCAMISETA" precision="22" scale="0"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="datos.Ciclistas" fetch="select" name="ciclistas">
+            <column name="CODIGOCICLISTA" not-null="true" precision="22" scale="0"/>
+        </many-to-one>
+        <many-to-one class="datos.Etapas" fetch="select" insert="false" name="etapas" update="false">
+            <column name="NUMETAPA" not-null="true" precision="22" scale="0"/>
+        </many-to-one>
+        <many-to-one class="datos.Camisetas" fetch="select" insert="false" name="camisetas" update="false">
+            <column name="CODIGOCAMISETA" not-null="true" precision="22" scale="0"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

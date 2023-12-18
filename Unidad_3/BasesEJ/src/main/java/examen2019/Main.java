@@ -1,6 +1,7 @@
 package examen2019;
 
 import java.math.BigInteger;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,7 +28,7 @@ public class Main {
 		globalLogger.setLevel(java.util.logging.Level.OFF);
 		sesion = Conexion.getSession(); //Creo la sessionFactory una única vez.
 		
-		ejercicio2("0101", BigInteger.valueOf(3), BigInteger.valueOf(2), "01/02/23", "28/02/23");
+		//ejercicio2("0101", BigInteger.valueOf(3), BigInteger.valueOf(2), "01/02/23", "28/02/23");
 		System.out.println("------------------");
 		ejercicio3();
 		
@@ -51,15 +52,48 @@ public class Main {
 			System.out.printf("%6s %8s %7s %12s %11s %10s %4s %6s %7s %9s %10s%n", "CODRES", "NUMHABIT", "CAMSUPL", "FECHAENTRADA", "FECHASALIDA", "TOTALSUPLE", "DIAS", "PVPDIA", "IMPORTE", "IMPORDESC", "IMPORTOTAL");
 			System.out.printf("%6s %8s %7s %12s %11s %10s %4s %6s %7s %9s %10s%n", "------", "--------", "-------", "------------", "-----------", "----------", "----", "------", "-------", "---------", "----------");
 			
+			int totalSuple = 0;
+			int totalDias = 0;
+			double totalPvpDias = 0;
+			double totalImporte = 0;
+			double totalImporteDesc = 0;
+			double totalImporteTotal = 0;
+			
+			String resMax = "";
+			double importeMax = 0;
+			
 			Set<T3reservas> reservas =  cli.getT3reservases();
 			for (T3reservas res : reservas) {
 				long difMS = res.getFechasalida().getTime() - res.getFechaentrada().getTime();
 				long difDias = TimeUnit.DAYS.convert(difMS, TimeUnit.MILLISECONDS);
 				
-				long importe;
+				double importe = (res.getT3habitaciones().getT3tiposhabitaciones().getPrecio() + res.getCamassupletorias().intValue() * 10) * difDias;
+				double importeDesc = Double.parseDouble(new DecimalFormat("#,##").format(importe * (res.getDescuento().doubleValue() / 100)));
+				double importeTotal = importe - importeDesc;
 				
-				System.out.printf("%6s %8s %7s %12s %11s %10s %4s %6s %7s %9s %10s%n", res.getCodreserva(), res.getT3habitaciones().getNumhabitacion(), res.getCamassupletorias(), res.getFechaentrada().toString(), res.getFechasalida().toString(),(res.getCamassupletorias().intValue() * 10), difDias, "PVPDIA", "IMPORTE", "IMPORDESC", "IMPORTOTAL");
+				totalSuple += res.getCamassupletorias().intValue() * 10;
+				totalDias += difDias;
+				totalPvpDias += res.getT3habitaciones().getT3tiposhabitaciones().getPrecio();
+				totalImporte += importe;
+				totalImporteDesc += importeDesc;
+				totalImporteTotal += importeTotal;
+				
+				if (importeMax == importeTotal) {
+					resMax += res.getCodreserva() + ". ";
+				}
+				if (importeTotal > importeMax) {
+					importeMax = importeTotal;
+					resMax = res.getCodreserva() + ". ";
+				}
+				
+				System.out.printf("%6s %8s %7s %12s %11s %10s %4s %6s %7s %9s %10s%n", res.getCodreserva(), res.getT3habitaciones().getNumhabitacion(), res.getCamassupletorias(), res.getFechaentrada().toString(), res.getFechasalida().toString(),(res.getCamassupletorias().intValue() * 10), difDias, res.getT3habitaciones().getT3tiposhabitaciones().getPrecio(), importe, importeDesc, importeTotal);
+				//System.out.println(res.getDescuento());
 			}
+			
+			System.out.printf("%6s %8s %7s %12s %11s %10s %4s %6s %7s %9s %10s%n", "------", "--------", "-------", "------------", "-----------", "----------", "----", "------", "-------", "---------", "----------");
+			System.out.printf("%9s %5s %7s %12s %11s %10s %4s %6s %7s %9s %10s%n", "TOTALES: ", "", "", "", "", totalSuple, totalDias, totalPvpDias, totalImporte, totalImporteDesc, totalImporteTotal);
+			System.out.println("Número de reserva con más importe total: " + resMax);
+			System.out.println();
 		}
 	}
 
