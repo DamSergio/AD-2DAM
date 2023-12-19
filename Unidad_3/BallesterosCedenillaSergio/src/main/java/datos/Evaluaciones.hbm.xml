@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 19 dic 2023 18:53:27 by Hibernate Tools 5.6.15.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="datos.Evaluaciones" optimistic-lock="none" table="EVALUACIONES">
+        <composite-id class="datos.EvaluacionesId" name="id">
+            <key-property name="codEvaluacion" type="int">
+                <column name="COD_EVALUACION" precision="5" scale="0"/>
+            </key-property>
+            <key-property name="numAlumno" type="int">
+                <column name="NUM_ALUMNO" precision="5" scale="0"/>
+            </key-property>
+            <key-property name="codAsig" type="int">
+                <column name="COD_ASIG" precision="5" scale="0"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="datos.Alumnos" fetch="select" insert="false" name="alumnos" update="false">
+            <column name="NUM_ALUMNO" not-null="true" precision="5" scale="0"/>
+        </many-to-one>
+        <many-to-one class="datos.Asignaturas" fetch="select" insert="false" name="asignaturas" update="false">
+            <column name="COD_ASIG" not-null="true" precision="5" scale="0"/>
+        </many-to-one>
+        <property name="nota" type="big_decimal">
+            <column name="NOTA" precision="3" scale="1"/>
+        </property>
+    </class>
+</hibernate-mapping>

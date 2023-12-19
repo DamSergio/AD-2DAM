@@ -1,0 +1,18 @@
+EJERCICIO 1:
+select c.codCentro, c.nombre, cu.codCurso, cu.denominacion, cu.numAlumnos from Centros c join c.cursoses cu
+	where cu.numAlumnos = (select max(cur.numAlumnos) from Cursos cur where cur.centros = c)
+
+EJERCICIO 2:
+select a.codAsig, a.nombre, a.cursos.codCurso, a.cursos.denominacion, a.cursos.centros.codCentro, a.cursos.centros.nombre, count(e.nota), avg(e.nota)
+	 from Asignaturas a join a.evaluacioneses e
+	 where e.id.codEvaluacion = 3
+	 group by a.codAsig, a.nombre, a.cursos.codCurso, a.cursos.denominacion, a.cursos.centros.codCentro, a.cursos.centros.nombre
+
+EJERCICIO 3:
+select a.codAsig, a.nombre, a.cursos.codCurso, a.cursos.denominacion, e.alumnos.nombre, e.nota, e.id.codEvaluacion from Asignaturas a join a.evaluacioneses e
+	where a.cursos.centros.localidad = 'TOLEDO' and e.nota = (select max(ev.nota) from Evaluaciones ev where ev.asignaturas = a and ev.id.codEvaluacion = e.id.codEvaluacion)
+	order by a.codAsig
+
+EJERCICIO 4:
+select a.codAsig, a.nombre, a.cursos.codCurso, a.cursos.denominacion, a.cursos.centros.nombre from Asignaturas a
+	where a.codAsig not in (select e.id.codAsig from Evaluaciones e)
