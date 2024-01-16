@@ -22,8 +22,8 @@ public class MainExamen {
 		globalLogger.setLevel(java.util.logging.Level.OFF);
 		sesion = Conexion.getSession(); //Creo la sessionFactory una única vez.
 		
-//		ej1();
-//		ej2();
+		ej1();
+		ej2();
 		ej3(1, 1331, 24, BigDecimal.valueOf(10));
 		
 		sesion.close();
